@@ -3,20 +3,19 @@ from fastapi.responses import JSONResponse
 import pandas as pd
 import numpy as np
 
+"""
+    this program computes Daily and Annualized Volatility from a CSV file.
+    Parameters:
+    - file: UploadFile - CSV file uploaded using form data.
+    Returns:
+    - JSONResponse: JSON with computed Daily and Annualized Volatility.
+"""
+
 app = FastAPI()
 
 @app.post("/compute_volatility")
 async def compute_volatility(file: UploadFile = File(None), file_path: str = None):
-    """
-    Computes Daily and Annualized Volatility from a CSV file or a provided file path.
-
-    Parameters:
-    - file: UploadFile - CSV file uploaded using form data.
-    - file_path: str - Optional. Path to the CSV file if not provided through file upload.
-
-    Returns:
-    - JSONResponse: JSON with computed Daily and Annualized Volatility.
-    """
+    
 
     # Read data from either file upload or specified file path
     if file:
@@ -40,17 +39,24 @@ async def compute_volatility(file: UploadFile = File(None), file_path: str = Non
 
     # Convert 'Date' column to datetime format
     df['Date'] = pd.to_datetime(df['Date'], format='%d-%b-%y', dayfirst=True)
+    #Calculating daily returns
+    
+    #for testing purposes
+    #current_close = 18107.85
+    #previous_close = 18165.35
+    #daily_returns = (current_close / previous_close) - 1
+    #print("Daily Returns:", daily_returns)
+    #answer= -0.003165
+    
+    df['Daily_Returns'] = df['Close'] / df['Close'].shift(1) - 1
 
-    # Calculate Daily Returns
-    df['Daily_Returns'] = df['Close'].pct_change()
-
-    # Calculate Daily Volatility
+    # Calculates Daily Volatility
     daily_volatility = df['Daily_Returns'].std()
 
-    # Calculate Annualized Volatility
+    # Calculating Annualized Volatility
     length_of_data = len(df)
     annualized_volatility = daily_volatility * np.sqrt(length_of_data)
 
-    # Return the computed values
+    # Returning the computed values
     result = {"Daily_Volatility": daily_volatility, "Annualized_Volatility": annualized_volatility}
     return JSONResponse(content=result)
