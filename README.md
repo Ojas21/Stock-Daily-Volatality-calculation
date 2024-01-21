@@ -3,7 +3,7 @@ Solutions to the Task 1&amp;2 in the assigned Finzome Challenge
 
 # Financial Data Volatility Calculation (Task 1)
 
-This repository contains Python code for calculating daily and annualized volatility from a financial dataset. The dataset is expected to be in CSV format, and the calculations are performed using Python with the help of Pandas and NumPy libraries.
+This repository contains Python code for calculating daily and annualized volatility from a financial dataset. The dataset is expected to be in **CSV** format, and the calculations are performed using Python with the help of Pandas and NumPy libraries.
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -16,7 +16,7 @@ This repository contains Python code for calculating daily and annualized volati
 
 ## Introduction
 
-The purpose of this project is to provide a Python script for calculating daily and annualized volatility from financial data. It uses standard financial formulas and leverages Pandas and NumPy for efficient data manipulation and calculations.
+The purpose of this project is to provide a Python script for calculating daily and annualized volatility from a given financial data. It uses standard financial formulas and makes use of Pandas and NumPy for efficient calculations.
 
 ## Calculations
 
@@ -49,7 +49,7 @@ The key calculations performed by the script include:
      python Ojas21/Finzome_Assignments.py
 
 ## Sample Dataset
-The sample dataset used for testing the script is available in the data directory. You can replace it with your own financial dataset.
+The sample dataset used for testing the script is available in the **data** directory. You can replace it with your own financial dataset. by including your file path in the variable of the same name.
 
 # Financial Data Daily & Annualized Volatility Calculation (Task 2)
 
@@ -68,7 +68,7 @@ This repository contains a FastAPI-based web service for computing daily and ann
 
 ## Introduction
 
-The Volatility Calculator is a web service that calculates daily and annualized volatility from a given financial dataset in CSV format. It uses FastAPI, a modern, fast (high-performance), web framework for building APIs with Python 3.7+.
+The python file is a web service that calculates daily and annualized volatility from a given financial dataset in CSV format. It uses FastAPI, a modern, fast & high-performance web framework for building APIs with Python 3.7+.
 
 ## Features
 
