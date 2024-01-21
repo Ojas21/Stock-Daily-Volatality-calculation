@@ -2,9 +2,9 @@ import pandas as pd
 import numpy as np
 
 # Read data from Excel file
-file_path = 'C:\\Users\\mangesh thengadi\\Desktop\\testshopify\\Finzome Assignment\\NIFTY 50.xlsx'
+file_path = 'C:\\path\\test.csv'
 
-df = pd.read_excel(file_path)
+df = pd.read_csv(file_path)
 
 # Adjust column names by removing extra spaces and special characters
 df.columns = df.columns.str.strip().str.replace(' ', '_', regex=True).str.replace('₹', '', regex=True).str.replace('\(','', regex=True).str.replace('\)','', regex=True)
@@ -14,6 +14,9 @@ print(df.columns)
 
 # Adjust date column name if needed
 df['Date'] = pd.to_datetime(df['Date'], format='%d-%b-%y', dayfirst=True)
+
+# Handle missing values if needed
+# df = df.fillna(0)  # Replace NaN with 0 or use other appropriate methods
 
 # Calculate Daily Returns
 df['Daily_Returns'] = df['Close'].pct_change()
