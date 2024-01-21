@@ -1,6 +1,14 @@
 import pandas as pd
 import numpy as np
 
+"""
+    this program computes Daily return, Daily Volatility and Annualized Volatility from a CSV file.
+    Parameters:
+    - file_path - replace CSV file path with your local directory path
+    Returns:
+    - prints the Daily and Annualized Volatility
+"""
+
 # file path
 file_path = 'C:\\path\\test.csv'
 
