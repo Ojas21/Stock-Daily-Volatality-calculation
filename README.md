@@ -45,8 +45,8 @@ The key calculations performed by the script include:
 2. Adding the path:
    - change the path in 'file-path' to your local system one
 3.Run the Python script:
-  ```bash
-  python Ojas21/Finzome_Assignments.py
+   ```bash
+     python Ojas21/Finzome_Assignments.py
 
 ## Sample Dataset
 The sample dataset used for testing the script is available in the data directory. You can replace it with your own financial dataset.
