@@ -87,7 +87,7 @@ The Volatility Calculator is a web service that calculates daily and annualized 
    ```bash
    git clone https://github.com/Ojas21/Finzome_Assignments.git
    cd Finzome_Assignment
-##Usage
+## Usage
 1. Run the FastAPI server:
    ```bash
    uvicorn main:app --reload
@@ -95,21 +95,21 @@ The Volatility Calculator is a web service that calculates daily and annualized 
     ```bash
    http://127.0.0.1:8000/docs
 
-##HTTP Endpoint
+## HTTP Endpoint
    Endpoint: /compute_volatility
    Method: POST
    Parameters:
       file (type: file) - CSV file containing financial data.
       file_path (type: string) - Path to the CSV file (optional if using file upload).
-##Sample cURL Request
+## Sample cURL Request
 ```bash
    curl -X 'POST' \
      'http://127.0.0.1:8000/compute_volatility' \
      -H 'accept: application/json' \
      -H 'Content-Type: multipart/form-data' \
      -F 'file=@path/to/your/financial_data.csv;type=text/csv'
-
-##License
+```
+## License
    This project is licensed under the MIT License.
 
 
